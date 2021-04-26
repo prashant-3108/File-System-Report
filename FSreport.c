@@ -1,7 +1,3 @@
-/*
-    NAME : Manmeet Mann
-    INSTITUTE STUDENT ID : 1087101
-*/
 
 #include <stdio.h>
 #include <stdlib.h>
