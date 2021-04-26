@@ -30,6 +30,57 @@ Example
 
 ###### 1. Inode directory structure
     Inode number | size (in bytes) | number of 512-byte blocks allocated to the file |  file size/512 | file/directory name
+    
+#### Example output 1
+
+    $ ./FSreport -tree /home/user/xyz
+    
+    File System Report: Tree Directory Structure
+
+    Level 1 : /home/user/xyz
+    Directories
+    user(user)	17306559	dwxrrwxr-x	4096	Javascript
+        Tuesday Apr 26 16:37:34 2021		Saturday Apr 9 19:9:39 2021
+    user(user)	17306565	dwxrrwxr-x	4096	subDirA
+        Tuesday Apr 26 16:37:34 2021		Tuesday Apr 5 17:7:29 2021
+
+    Files
+    user(user)	17306562	-w-rrw-r--	0	lsReport
+        Tuesday Apr 26 16:37:34 2021		Tuesday Apr 5 17:6:39 2021
+    user(user)	17306564	-w-rrw-r--	0	lsReport1.c
+        Tuesday Apr 26 16:37:34 2021		Tuesday Apr 5 17:6:47 2021
+
+    Level 2 : Javascript
+    Files
+    user(user)	17306560	-w-rrw-r--	76	mermaid.min.js
+        Tuesday Apr 26 16:37:34 2021		Saturday Apr 9 19:9:39 2021
+
+    Level 2 : subDirA
+    Files
+    user(user)	17306566	-w-rrw-r--	0	lsFancy
+        Tuesday Apr 26 16:37:34 2021		Tuesday Apr 5 17:7:23 2021
+    user(user)	17306567	-w-rrw-r--	0	lsFancy.c
+        Tuesday Apr 26 16:37:34 2021		Tuesday Apr 5 17:7:29 2021
+
+
+#### Example output 2
+
+    $ ./FSreport -inode /home/user/xyz
+    
+    
+    Level 1 Inodes: /home/user/xyz
+    17306559:4096	8	8	Javascript
+    17306562:0	0	0	lsReport
+    17306564:0	0	0	lsReport1.c
+    17306565:4096	8	8	subDirA
+
+    Level 2 Inodes: subDirA
+    17306566:0	0	0	lsFancy
+    17306567:0	0	0	lsFancy.c
+
+    Level 2 Inodes: Javascript
+    17306560:76	8	1	mermaid.min.js
+
 
 
 ### Functionality 
